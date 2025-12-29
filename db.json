@@ -1,0 +1,102 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Shoes 1",
+      "description": "Shoes are made from materials like leather, synthetic fabric, mesh, or rubber. The upper part provides comfort and support, while the sole (usually rubber or foam) offers grip and cushioning",
+      "category": "shoes",
+      "price": 40,
+      "image": "/shoes/shoes-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Shoes 2",
+      "description": "Shoes are made from materials like leather, synthetic fabric, mesh, or rubber. The upper part provides comfort and support, while the sole (usually rubber or foam) offers grip and cushioning",
+      "category": "shoes",
+      "price": 70,
+      "image": "/shoes/shoes-2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Shoes 3",
+      "description": "Shoes are made from materials like leather, synthetic fabric, mesh, or rubber. The upper part provides comfort and support, while the sole (usually rubber or foam) offers grip and cushioning",
+      "category": "shoes",
+      "price": 90,
+      "image": "/shoes/shoes-3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Shoes 4",
+      "description": "Shoes are made from materials like leather, synthetic fabric, mesh, or rubber. The upper part provides comfort and support, while the sole (usually rubber or foam) offers grip and cushioning",
+      "category": "shoes",
+      "price": 100,
+      "image": "/shoes/shoes-4.jpg"
+    },
+
+    {
+      "id": 5,
+      "title": "Jeans 1",
+      "description": "Jeans made from denim, a strong cotton fabric often blended with a small amount of elastane or polyester for stretch and comfort. They are durable, breathable, and designed for everyday wear, with sturdy stitching and a comfortable fit.",
+      "category": "jeans",
+      "price": 50,
+      "image": "/jeans/jeans-1.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Jeans 2",
+      "description": "Jeans made from denim, a strong cotton fabric often blended with a small amount of elastane or polyester for stretch and comfort. They are durable, breathable, and designed for everyday wear, with sturdy stitching and a comfortable fit.",
+      "category": "jeans",
+      "price": 30,
+      "image": "/jeans/jeans-2.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Jeans 3",
+      "description": "Jeans made from denim, a strong cotton fabric often blended with a small amount of elastane or polyester for stretch and comfort. They are durable, breathable, and designed for everyday wear, with sturdy stitching and a comfortable fit.",
+      "category": "jeans",
+      "price": 80,
+      "image": "/jeans/jeans-3.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Jeans 4",
+      "description": "Jeans made from denim, a strong cotton fabric often blended with a small amount of elastane or polyester for stretch and comfort. They are durable, breathable, and designed for everyday wear, with sturdy stitching and a comfortable fit.",
+      "category": "jeans",
+      "price": 100,
+      "image": "/jeans/jeans-4.jpg"
+    },
+
+    {
+      "id": 9,
+      "title": "T-Shirt 1",
+      "description": "T-shirts are made from cotton, polyester, or a blend of both. Cotton makes them soft and breathable, while polyester adds strength and helps them keep their shape. They are lightweight, comfortable, and suitable for everyday wear.",
+      "category": "tshirt",
+      "price": 60,
+      "image": "/tshirt/tshirt-1.jpg"
+    },
+    {
+      "id": 10,
+      "title": "T-Shirt 2",
+      "description": "T-shirts are made from cotton, polyester, or a blend of both. Cotton makes them soft and breathable, while polyester adds strength and helps them keep their shape. They are lightweight, comfortable, and suitable for everyday wear.",
+      "category": "tshirt",
+      "price": 40,
+      "image": "/tshirt/tshirt-2.jpg"
+    },
+    {
+      "id": 11,
+      "title": "T-Shirt 3",
+      "description": "T-shirts are made from cotton, polyester, or a blend of both. Cotton makes them soft and breathable, while polyester adds strength and helps them keep their shape. They are lightweight, comfortable, and suitable for everyday wear.",
+      "category": "tshirt",
+      "price": 70,
+      "image": "/tshirt/tshirt-3.jpg"
+    },
+    {
+      "id": 12,
+      "title": "T-Shirt 4",
+      "description": "T-shirts are made from cotton, polyester, or a blend of both. Cotton makes them soft and breathable, while polyester adds strength and helps them keep their shape. They are lightweight, comfortable, and suitable for everyday wear.",
+      "category": "tshirt",
+      "price": 100,
+      "image": "/tshirt/tshirt-4.jpg"
+    }
+  ]
+}

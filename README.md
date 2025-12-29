@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+To get up running for project, you need to follow those steps:
+
+First, You need to clone project and install dependencies with command `pnpm install`
+
+Note:
+May you need to delete file `pnpm-lock.yaml` then install dependencies
+
+Then, You need to define `.env` file you can take a look to `.env-example`
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_BACKEND_URL="http://localhost:8000"
+NEXT_PUBLIC_APP_PORT=3000
+NEXT_PUBLIC_APP_ENV=development
+```
+
+Then, you need to run json-server (is mock backend server for fetching data) running on port _8000_
+
+```bash
+pnpm exec json-server --watch db.json --port 8000
+```
+
+run the development server:
+
+```bash
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can test backend server on this url [http://localhost:8000/products](http://localhost:8000/products)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Explanation
 
-## Learn More
+This Next.js project made by Tailwindcss and Shadcn UI kit that shows list of products and can filter them and assign some of them to your cart and increase/decrease items of that cart
 
-To learn more about Next.js, take a look at the following resources:
+Also I added static pages for product details that will be rendered on the server at the build time and when user request that details page it will be send directly because it's already rendered at build time
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+there are two main routes
+[http://localhost:3000/products](http://localhost:3000/products)
+[http://localhost:3000/products/:id](http://localhost:3000/products/:id)
