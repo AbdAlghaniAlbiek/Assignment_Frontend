@@ -22,7 +22,7 @@ function Products({ filter }: IProductsProps) {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [products, setProducts] = useState<Product[]>(allProducts);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const fetchProducts = async () => {
       const fetchedProducts = await productsFetch.getAll({});
 
@@ -55,16 +55,14 @@ function Products({ filter }: IProductsProps) {
     setProducts(filteredProducts);
   }, [filter.category, filter.range, filter.title, allProducts]);
 
-  return (
+  return products.length > 0 ? (
     <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2 ">
-      {products.length > 0 ? (
-        products.map((product) => (
-          <ProductItem key={product.id} product={product} />
-        ))
-      ) : (
-        <EmptyResult message="No products found" imageUrl={searchImage} />
-      )}
+      {products.map((product) => (
+        <ProductItem key={product.id} product={product} />
+      ))}
     </div>
+  ) : (
+    <EmptyResult message="No products found" imageUrl={searchImage} />
   );
 }
 

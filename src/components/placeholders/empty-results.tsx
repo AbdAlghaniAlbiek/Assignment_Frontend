@@ -24,7 +24,7 @@ function EmptyResult({
       initial={{ scaleX: 0, scaleY: 0 }}
       animate={{ scaleX: 1, scaleY: 1 }}
       transition={{ type: "spring" }}
-      className="absolute left-[40%] top-[30%] translate-x-[-50%] translate-y-[-50%] max-w-[200px]"
+      className="max-w-[200px]"
     >
       <div className="flex flex-col gap-4 items-center justify-center">
         <Image
