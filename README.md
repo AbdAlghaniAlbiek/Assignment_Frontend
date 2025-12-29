@@ -43,3 +43,8 @@ there are two main routes
 - **Data Loading**: json-server that serve json file and can fetch data from it as backend server
 - **UI Framework**: Shadcn UI (is most reliable and hand-crafted components library)
 - **Motion**: Using motion library for increase UX interactivity
+
+## Deployment
+
+Deployed version hosted on this url
+[https://e-commerce-phi-ten-89.vercel.app/products](https://e-commerce-phi-ten-89.vercel.app/products)
