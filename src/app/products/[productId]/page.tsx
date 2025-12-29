@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { productsFetch } from "../_fetch/products.api";
 import { Metadata } from "next";
+import db from "../../../../db.json";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Product Details",
@@ -10,17 +12,25 @@ export const metadata: Metadata = {
 };
 
 interface PageProps {
-  params: Promise<{ productId: number }>;
+  params: Promise<{ productId: string }>;
 }
 
 export async function generateStaticParams() {
-  return (await productsFetch.getAll({})).map((product) => ({
-    productId: product.id,
+  return db.products.map((product) => ({
+    productId: product.id.toString(),
   }));
 }
 
+// Note
+// I used json-server lib to mock data and it works but I deployed to web hosting server it cause problems so I used route.ts functionality
+// I was indorsed here to fetch data from db directly because of static rendering and generate static pages
+// If there a real API I'll use axios to fetch data directly and no problem at that moment and the static pages will rended successfully
+
 async function page({ params }: PageProps) {
-  const product = await productsFetch.getOne({ id: (await params).productId });
+  const productId = Number.parseInt((await params).productId);
+  const product = await db.products.find((p) => p.id === productId);
+
+  if (!product) return notFound(); // ⚠️ critical for build-time safety
 
   return (
     <div className="flex justify-center items-start pt-3 bg-slate-100 h-screen">

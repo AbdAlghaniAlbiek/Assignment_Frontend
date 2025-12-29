@@ -10,15 +10,9 @@ May you need to delete file `pnpm-lock.yaml` then install dependencies
 Then, You need to define `.env` file you can take a look to `.env-example`
 
 ```bash
-NEXT_PUBLIC_BACKEND_URL="http://localhost:8000"
+NEXT_PUBLIC_BACKEND_URL="http://localhost:3000/api"
 NEXT_PUBLIC_APP_PORT=3000
 NEXT_PUBLIC_APP_ENV=development
-```
-
-Then, you need to run json-server (is mock backend server for fetching data) running on port _8000_
-
-```bash
-pnpm exec json-server --watch db.json --port 8000
 ```
 
 run the development server:
@@ -27,9 +21,9 @@ run the development server:
 pnpm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can test backend server on this url [http://localhost:8000/products](http://localhost:8000/products)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Project Explanation
 
@@ -39,4 +33,13 @@ Also I added static pages for product details that will be rendered on the serve
 
 there are two main routes
 [http://localhost:3000/products](http://localhost:3000/products)
+
 [http://localhost:3000/products/:id](http://localhost:3000/products/:id)
+
+## Tech Choices
+
+- **State Management**: Zustand (simple and light weight)
+- **Styling**: Tailwindcss (Have class and utilities that makes development process more faster)
+- **Data Loading**: json-server that serve json file and can fetch data from it as backend server
+- **UI Framework**: Shadcn UI (is most reliable and hand-crafted components library)
+- **Motion**: Using motion library for increase UX interactivity
