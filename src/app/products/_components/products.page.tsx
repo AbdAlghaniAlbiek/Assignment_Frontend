@@ -22,7 +22,7 @@ function ProductsPage() {
   };
 
   return (
-    <div className="bg-slate-100 flex flex-row gap-20 h-screen justify-center pt-3">
+    <div className="bg-slate-100 min-h-screen flex flex-row gap-20 justify-center pt-3">
       <ProductsFilter onChange={onFilterChange} />
       <Products filter={{ category, range, title }} />
     </div>
