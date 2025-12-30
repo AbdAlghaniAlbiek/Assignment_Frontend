@@ -9,6 +9,9 @@ import { filterProps, motion } from "motion/react";
 import ProductItem from "./product.item";
 import EmptyResult from "@/components/placeholders/empty-results";
 import searchImage from "@/assets/search.png";
+import { useQuery } from "react-query";
+import { toast } from "sonner";
+import LargeLoader from "@/components/loaders/large-loader";
 
 interface IProductsProps {
   filter: {
@@ -19,51 +22,69 @@ interface IProductsProps {
 }
 
 function Products({ filter }: IProductsProps) {
-  const [allProducts, setAllProducts] = useState<Product[]>([]);
-  const [products, setProducts] = useState<Product[]>(allProducts);
+  const [products, setProducts] = useState<Product[]>([]);
+
+  const { data, isLoading, isError, error } = useQuery<
+    Product[],
+    any,
+    any,
+    any
+  >({
+    queryKey: ["products"],
+    queryFn: () => productsFetch.getAll({}),
+  });
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const fetchedProducts = await productsFetch.getAll({});
+    if (error && isError) {
+      toast.error(error.message);
+    }
+  }, [isError, error]);
 
-      setAllProducts(fetchedProducts);
-      setProducts(fetchedProducts);
-    };
-
-    fetchProducts();
-  }, []);
+  useEffect(() => {
+    if (data) {
+      setProducts(data);
+    }
+  }, [data]);
 
   useLayoutEffect(() => {
-    let filteredProducts = allProducts;
+    let filteredProducts = data;
     if (filter.category) {
       filteredProducts = filteredProducts.filter(
-        (product) => product.category == filter.category
+        (product: Product) => product.category == filter.category
       );
     }
     if (filter.title) {
-      filteredProducts = filteredProducts.filter((product) =>
+      filteredProducts = filteredProducts.filter((product: Product) =>
         product.title.toLowerCase().includes(filter.title!)
       );
     }
     if (filter.range && filter.range.length > 0) {
       filteredProducts = filteredProducts.filter(
-        (product) =>
+        (product: Product) =>
           product.price >= filter.range![0] && product.price <= filter.range![1]
       );
     }
 
     setProducts(filteredProducts);
-  }, [filter.category, filter.range, filter.title, allProducts]);
+  }, [filter.category, filter.range, filter.title, data]);
 
-  return products.length > 0 ? (
-    <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2 ">
-      {products.map((product) => (
-        <ProductItem key={product.id} product={product} />
-      ))}
-    </div>
-  ) : (
-    <EmptyResult message="No products found" imageUrl={searchImage} />
-  );
+  const showContent = () => {
+    if (products && Products.length > 0) {
+      return (
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2 ">
+          {products.map((product) => (
+            <ProductItem key={product.id} product={product} />
+          ))}
+        </div>
+      );
+    } else if (isLoading) {
+      return <LargeLoader />;
+    } else {
+      return <EmptyResult message="No products found" imageUrl={searchImage} />;
+    }
+  };
+
+  return <div>{showContent()}</div>;
 }
 
 export default Products;

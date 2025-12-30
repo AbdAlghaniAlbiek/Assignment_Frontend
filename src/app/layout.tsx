@@ -4,6 +4,8 @@ import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import "./globals.css";
 import Header from "./_layout/header";
+import QueryClientContextProvider from "@/providers/react-query.provider";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const cario = Cairo({
   subsets: ["latin"],
