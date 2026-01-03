@@ -19,7 +19,7 @@ function ProductItem({ product }: IProductProps) {
       animate={{ opacity: 1, translateY: 0 }}
       whileHover={{ translateY: -8 }}
       key={product.id}
-      className="border rounded-lg flex flex-col w-[160px] shadow-sm cursor-pointer h-fit"
+      className="border rounded-lg flex flex-col lg:w-[160px] md:w-[160px]  shadow-sm cursor-pointer justify-stretch"
       onClick={() => router.push(`/products/${product.id}`)}
     >
       {/* <Image
@@ -32,7 +32,7 @@ function ProductItem({ product }: IProductProps) {
           /> */}
       <img
         src={product.image}
-        className="w-[160px] h-[160px] object-fill rounded-lg"
+        className="  lg:w-[160px] md:w-[160px] h-[160px]  object-fill rounded-lg"
         alt="product_image"
       />
       <div className="mt-3 flex flex-col gap-2 p-3">

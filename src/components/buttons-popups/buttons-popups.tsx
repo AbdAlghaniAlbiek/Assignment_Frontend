@@ -131,19 +131,21 @@ export function ShredButton({
   props,
   onClick,
 }: ISharedButtonProps) {
-  const { actualWidth: actualButtonWidth } = useActualWidth({
-    width: props?.width ?? 0,
-    largeScreenWidth: props?.largeScreenWidth,
-    smallScreenWidth: props?.smallScreenWidth,
-  });
+  // const { actualWidth: actualButtonWidth } = useActualWidth({
+  //   width: props?.width ?? 0,
+  //   largeScreenWidth: props?.largeScreenWidth,
+  //   smallScreenWidth: props?.smallScreenWidth,
+  // });
   const buttonProps =
     props?.width || actionStatus.status === "Other"
       ? {
           style: {
-            ...(props?.width && {
-              width: actualButtonWidth,
-              height: actualButtonWidth,
-            }),
+            ...(props?.width && { width: props.width }),
+            ...(props?.width && { height: props.width }),
+            // ...(props?.width && {
+            //   width: actualButtonWidth,
+            //   height: actualButtonWidth,
+            // }),
             // ...(actionStatus.status === 'Other' && {
             //   [`--${actionStatus?.otherBgColor}`]: actionStatus?.otherBgColor,
             //   [`--${actionStatus?.otherBgHoverColor}`]:
@@ -205,11 +207,11 @@ export function ButtonSheet({
     );
   }
 
-  const { actualWidth } = useActualWidth({
-    width,
-    largeScreenWidth,
-    smallScreenWidth,
-  });
+  // const { actualWidth } = useActualWidth({
+  //   width,
+  //   largeScreenWidth,
+  //   smallScreenWidth,
+  // });
 
   return (
     <Sheet>

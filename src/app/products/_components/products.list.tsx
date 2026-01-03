@@ -71,7 +71,7 @@ function Products({ filter }: IProductsProps) {
   const showContent = () => {
     if (products && Products.length > 0) {
       return (
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2 ">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 lg:gap-3 gap-2 md:gap-3 px-2">
           {products.map((product) => (
             <ProductItem key={product.id} product={product} />
           ))}

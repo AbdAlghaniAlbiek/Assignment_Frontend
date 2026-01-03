@@ -34,8 +34,8 @@ export default function ProductsLayout({
             actionStatus={{
               status: "Other",
               otherIcon: <ShoppingCart />,
-              otherBgColor: "blue",
-              otherBgHoverColor: "blue",
+              otherBgColor: "Black",
+              otherBgHoverColor: "Black",
             }}
             sheetProps={{ title: "Shopping Cart", content: <Cart /> }}
             buttonProps={{ rounded: "rounded-full", width: 60 }}
