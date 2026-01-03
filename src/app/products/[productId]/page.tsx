@@ -21,7 +21,7 @@ export async function generateStaticParams() {
   }));
 }
 
-// Note
+// Note (To Clarify choices)
 // I used json-server lib to mock data and it works but I deployed to web hosting server it cause problems so I used route.ts functionality
 // I was indorsed here to fetch data from db directly because of static rendering and generate static pages
 // If there is a real API I'll use axios to fetch data directly and no problem at that moment and the static pages will rended successfully
